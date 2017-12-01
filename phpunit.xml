@@ -1,0 +1,13 @@
+<phpunit bootstrap="vendor/autoload.php">
+  <testsuites>
+    <testsuite name="WPML Installer Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+
+  <filter>
+    <whitelist>
+      <directory>src</directory>
+    </whitelist>
+  </filter>
+</phpunit>

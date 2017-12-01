@@ -7,7 +7,9 @@
         "php": ">=5.5"
     },
     "require-dev": {
-        "composer/composer": "^1.5"
+        "composer/composer": "^1.5",
+        "squizlabs/php_codesniffer": "^3.1",
+        "phpunit/phpunit": "^6.5"
     },
     "license": "MIT",
     "authors": [
@@ -16,5 +18,9 @@
             "email": "6uliver@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "scripts": {
+        "lint": "phpcs src tests --standard=PSR2",
+        "test": "phpunit"
+    }
 }
