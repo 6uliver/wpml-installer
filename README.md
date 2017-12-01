@@ -6,5 +6,5 @@
 
 A composer plugin that makes installing [WPML](https://wpml.org/) with [composer](https://github.com/composer/composer) possible. 
 
-## The project is under development so it's not working yet!!!
+## The project is under development and is in alpha stage. It could produce unexpected behaviour!!!
 

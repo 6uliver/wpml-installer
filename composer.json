@@ -22,7 +22,7 @@
     "autoload": {
         "psr-4": { "WPMLInstaller\\": "src/WPMLInstaller" }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "alpha",
     "extra": {
         "class": "WPMLInstaller\\Plugin"
     },
