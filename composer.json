@@ -1,0 +1,20 @@
+{
+    "name": "6uliver/wpml-installer",
+    "description": "An install helper for WPML",
+    "type": "composer-plugin",
+    "require": {
+        "composer-plugin-api": "^1.1",
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "composer/composer": "^1.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roland Németh",
+            "email": "6uliver@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
