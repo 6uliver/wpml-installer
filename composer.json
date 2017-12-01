@@ -18,6 +18,9 @@
             "email": "6uliver@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": { "WPMLInstaller\\": "src/WPMLInstaller" }
+    },
     "minimum-stability": "dev",
     "scripts": {
         "lint": "phpcs src tests --standard=PSR2",
