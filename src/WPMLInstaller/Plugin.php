@@ -10,12 +10,17 @@ use Composer\Installer\PackageEvents;
 use Composer\IO\IOInterface;
 use Composer\Package\PackageInterface;
 use Composer\Plugin\PluginInterface;
+use Dotenv\Dotenv;
 
 class Plugin implements PluginInterface, EventSubscriberInterface
 {
     const WPML_PACKAGE_NAME = "wpml/multilingual-cms";
     const WPML_BASE_URL = "https://wpml.org/";
     const WPML_DOWNLOAD_ID = "6088";
+    const USER_ID_VARIABLE = "WPML_USER_ID";
+    const SUBSCRIPTION_KEY_VARIABLE = "WPML_SUBSCRIPTION_KEY";
+
+    private $dotenv;
 
     /**
      * Apply plugin modifications to Composer
@@ -25,6 +30,10 @@ class Plugin implements PluginInterface, EventSubscriberInterface
      */
     public function activate(Composer $composer, IOInterface $io)
     {
+        if (file_exists(getcwd().DIRECTORY_SEPARATOR.'.env')) {
+            $this->dotenv = new Dotenv(getcwd());
+            $this->dotenv->load();
+        }
     }
 
     /**
@@ -72,12 +81,12 @@ class Plugin implements PluginInterface, EventSubscriberInterface
 
     protected function getUserId()
     {
-        return 'dummyUserId';
+        return getenv(self::USER_ID_VARIABLE);
     }
 
     protected function getSubscriptionKey()
     {
-        return 'dummySubscriptionKey';
+        return getenv(self::SUBSCRIPTION_KEY_VARIABLE);
     }
 
     protected function getDistUrl(PackageInterface $package)

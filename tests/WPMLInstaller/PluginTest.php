@@ -1,4 +1,5 @@
 <?php
+
 namespace WPMLInstaller\Test;
 
 use Composer\Installer\PackageEvent;
@@ -23,6 +24,9 @@ class PluginTest extends \PHPUnit_Framework_TestCase
 
     public function testUrlCreatedCorrectly()
     {
+        putenv("WPML_USER_ID=testUserId");
+        putenv("WPML_SUBSCRIPTION_KEY=testSubscriptionKey");
+
         $package = $this
             ->getMockBuilder('Composer\Package\PackageInterface')
             ->setMethods([
@@ -42,8 +46,8 @@ class PluginTest extends \PHPUnit_Framework_TestCase
             ->method('setDistUrl')
             ->with('https://wpml.org/' .
                 '?download=6088' .
-                '&user_id=dummyUserId' .
-                '&subscription_key=dummySubscriptionKey' .
+                '&user_id=testUserId' .
+                '&subscription_key=testSubscriptionKey' .
                 '&version=1.2.3.4');
         $package
             ->expects($this->once())
