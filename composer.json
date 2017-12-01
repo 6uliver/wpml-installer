@@ -22,6 +22,9 @@
         "psr-4": { "WPMLInstaller\\": "src/WPMLInstaller" }
     },
     "minimum-stability": "dev",
+    "extra": {
+        "class": "WPMLInstaller\\Plugin"
+    },
     "scripts": {
         "lint": "phpcs src tests --standard=PSR2",
         "test": "phpunit"
