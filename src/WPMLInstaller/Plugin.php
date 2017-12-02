@@ -57,7 +57,8 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            PackageEvents::PRE_PACKAGE_INSTALL => 'updateDistUrl'
+            PackageEvents::PRE_PACKAGE_INSTALL => 'updateDistUrl',
+            PackageEvents::PRE_PACKAGE_UPDATE => 'updateDistUrl'
         ];
     }
 
